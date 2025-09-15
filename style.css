@@ -1,0 +1,180 @@
+body {
+  margin: 20px; 
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  background: #41b9e1;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 600px; 
+  text-align: center;
+}
+
+input {
+  width: 100%;
+  max-width: 350px;
+  height: 40px;
+  padding: 10px;
+  border: 2px solid #ddd;
+  border-radius: 20px;
+  outline: none;
+  margin-bottom: 10px;
+}
+
+button {
+  padding: 10px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  height: 60px;
+  cursor: pointer;
+  width: 150px;
+}
+
+.weather-card {
+  background: #ffffff;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  text-align: center;
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  transition: transform 0.3s ease;
+}
+
+.weather-card:hover {
+  transform: scale(1.05);
+}
+
+.weather-card h2 {
+  font-size: 28px;
+  font-weight: bold;
+  color: #2e4086;
+}
+
+.weather-card img {
+  width: 100px;
+  margin: 10px auto;
+  display: block;
+}
+
+.weather-card p {
+  font-size: 18px;
+  margin: 5px 0;
+}
+
+/* SUNNY */
+.sunny-bg {
+  background: linear-gradient(to top, #fceabb, #f8b500);
+  overflow: hidden;
+}
+
+.sun {
+  width: 100px;
+  height: 100px;
+  background: yellow;
+  border-radius: 50%;
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  animation: rotateSun 10s linear infinite;
+}
+
+@keyframes rotateSun {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* CLOUDY */
+.cloudy-bg {
+  background: url("https://www.stockvault.net/data/2019/03/09/261906/preview16.jpg");
+  overflow: hidden;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* RAINY */
+.rainy-bg {
+  background: linear-gradient(to top, #2c3e50, #3498db);
+  overflow: hidden;
+}
+
+.drop {
+  width: 2px;
+  height: 20px;
+  background: #00f;
+  position: absolute;
+  top: -20px;
+  animation: fall 1s linear infinite;
+}
+
+@keyframes fall {
+  to { transform: translateY(100vh); }
+}
+
+/* SNOWY */
+.snowy-bg {
+  background: linear-gradient(to top, #e6f1f5, #bcdff1);
+  overflow: hidden;
+}
+
+.snowflake {
+  color: white;
+  font-size: 24px;
+  position: absolute;
+  top: -20px;
+  animation: fallSnow 10s linear infinite;
+}
+
+@keyframes fallSnow {
+  to { transform: translateY(100vh); }
+}
+
+
+.hidden { display: none; }
+
+/* Tablet screens */
+@media (max-width: 668px) {
+  .container {
+    width: 90%;
+    padding: 20px;
+  }
+  button {
+    width: 20%;
+    margin-top: 10px;
+  }
+   input {
+    width: 100%;
+    font-size: 14px;
+  }
+}
+
+/* Mobile screens */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.4rem;
+  }
+  input {
+    width: 95%;
+    font-size: 18px;
+  }
+  button {
+    width: 30%;
+    font-size: 18px;
+  }
+  .weather-card h2 {
+    font-size: 18px;
+  }
+  .weather-card p {
+    font-size: 14px;
+  }
+}
